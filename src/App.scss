@@ -1,91 +1,212 @@
-// Global Styling
-* {
+/* Global Styling */
+body {
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f4f6f7;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-}
-
-.container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-// Header Styling
+/* Header Styling */
 .header {
-  background-color: #4caf50;
-  color: white;
-  text-align: center;
+  background-color: #2c3e50;
+  color: #ecf0f1;
   padding: 20px;
+  text-align: center;
   margin-bottom: 20px;
 
   h1 {
-    font-size: 2rem;
-  }
-}
-
-// Calculator Styling
-.calculator {
-  background-color: white;
-  padding: 30px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  text-align: center;
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2.5rem;
+    margin: 0;
   }
 
-  .input-group {
-    margin: 10px 0;
+  nav {
+    margin-top: 10px;
 
-    label {
-      font-size: 1.1rem;
-      color: #555;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
 
-      input, select {
-        margin-left: 10px;
-        padding: 8px;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        outline: none;
+      li {
+        margin: 0 15px;
 
-        &:focus {
-          border-color: #4caf50;
+        a {
+          color: #ecf0f1;
+          text-decoration: none;
+          font-size: 1.2rem;
+
+          &:hover {
+            color: #f39c12;
+          }
         }
       }
     }
   }
+}
 
-  .calculate-btn {
-    margin-top: 20px;
+/* Main Container Styling */
+.app {
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+}
+
+/* TrigCalculator Page Styling */
+.trig-calculator {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+  }
+
+  button {
     padding: 10px 20px;
-    font-size: 1.1rem;
-    background-color: #4caf50;
-    color: white;
+    background-color: #2c3e50;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
 
     &:hover {
-      background-color: #45a049;
+      background-color: #34495e;
     }
   }
 
   .result {
     margin-top: 20px;
-    h3 {
-      font-size: 1.3rem;
-      color: #333;
+    font-size: 1.3rem;
+    color: #2c3e50;
+  }
+}
+
+/* TrigIdentities Page Styling */
+.trig-identities {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 10px 0;
+      font-size: 1.2rem;
+      color: #34495e;
+      border-bottom: 1px solid #ecf0f1;
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
+  }
+}
+
+.trig-table {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+
+    thead {
+      background-color: #4caf50; // Header background color
+      color: white;
+
+      th {
+        padding: 12px;
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #ddd;
+
+        &:hover {
+          background-color: #f1f1f1; // Row hover effect
+        }
+
+        td {
+          padding: 12px;
+          text-align: left;
+          color: #555;
+
+          &:nth-child(odd) {
+            background-color: #f2f2f2; // Zebra striping effect
+          }
+        }
+      }
+    }
+
+    // Responsive design
+    @media (max-width: 768px) {
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .header {
+    h1 {
+      font-size: 2rem;
+    }
+
+    nav ul {
+      flex-direction: column;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .trig-calculator,
+  .trig-identities,
+  .trig-table {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 0.9rem;
   }
 }
